@@ -1,6 +1,6 @@
 {
   "name": "zod-extend",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "description": "A utility to create standardized zod extension functions",
   "main": "dist/index.js",

@@ -10,7 +10,9 @@ export interface ExtendZodOptions {
 /**
  * Type for the extendZod function returned by createExtendZod
  */
-export type ExtendZodFunction<T extends ExtendZodOptions> = (z: typeof import('zod').z) => typeof z & T;
+export type ExtendZodFunction<T extends ExtendZodOptions> = (z: typeof import('zod').z) => typeof z & T & {
+  [OBJECT_EXTEND_FUNCTION_ENTRIES]: T;
+}
 
 /**
  * Creates a standardized extendZod function that can be used by zod extension packages
