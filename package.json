@@ -1,6 +1,6 @@
 {
   "name": "zod-extend",
-  "version": "1.0.0",
+  "version": "0.0.0",
   "type": "module",
   "description": "A utility to create standardized zod extension functions",
   "main": "dist/index.js",
@@ -27,9 +27,6 @@
   ],
   "author": "",
   "license": "MIT",
-  "peerDependencies": {
-    "zod": "^3.0.0"
-  },
   "devDependencies": {
     "typescript": "^5.0.0",
     "vitest": "^3.2.4",

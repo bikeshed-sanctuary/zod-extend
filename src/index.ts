@@ -1,5 +1,3 @@
-import type { z } from 'zod';
-
 /**
  * Options for creating an extendZod function
  */
