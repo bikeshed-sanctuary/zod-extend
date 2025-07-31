@@ -10,7 +10,8 @@ export interface ExtendZodOptions {
 /**
  * Type for the extendZod function returned by createExtendZod
  */
-export type ExtendZodFunction<T extends ExtendZodOptions> = (z: typeof import('zod').z) => typeof z & T & {
+export type ExtendZodFunction<T extends ExtendZodOptions> = {
+  (z: typeof import('zod').z): typeof z & T;
   [OBJECT_EXTEND_FUNCTION_ENTRIES]: T;
 }
 
@@ -40,7 +41,7 @@ export function createExtendZod<T extends ExtendZodOptions>(extensions: T): Exte
     return extendedZ as typeof z & T;
   };
   (extendZod as any)[OBJECT_EXTEND_FUNCTION_ENTRIES] = extensions;
-  return extendZod;
+  return extendZod as ExtendZodFunction<T>;
 }
 
 export default createExtendZod;
